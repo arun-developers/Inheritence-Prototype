@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Custome Array</h1>
+</body>
+
+</html>
+<script>
+
+    function myArray() {
+
+        Object.defineProperty(this, "length", {
+
+            value: 0,
+            writable: true,
+            enumerable: false
+        })
+
+        this.length = arguments.length;
+
+        for (let i = 0; i < arguments.length; i++) {
+
+            this[i] = arguments[i];
+        }
+
+    }
+
+    let Array = new myArray(1, 2, 3, 4, 5, 6);
+
+    myArray.prototype.पुश = function (value) {
+        this[this.length] = value;
+        this.length++;
+    }
+    myArray.prototype.पॉप = function () {
+        delete this[this.length - 1];
+        this.length--;
+    }
+    myArray.prototype.टॉप = function () {
+        console.log("Print Top:", this[this.length - 1]);
+    }
+    myArray.prototype.प्रिंट = function () {
+        console.log("Print Array:", Object.values(Array));
+    }
+    myArray.prototype.प्रिंटरिवर्स = function () {
+
+        let revArr = [];
+
+        for (let i = this.length - 1; i >= 0; i--) {
+            revArr.push(this[i]);
+        }
+        console.log("Print Reverse:", revArr);
+    }
+    myArray.prototype.आकार = function () {
+        console.log("Print Size:", this.length);
+    }
+    Array.पुश(7);
+    Array.पुश(8);
+    Array.पुश(9);
+    Array.पुश(0);
+    Array.पुश(-1);
+    Array.पॉप();
+    Array.टॉप();
+    Array.प्रिंट();
+    Array.प्रिंटरिवर्स();
+    Array.आकार();
+
+</script>

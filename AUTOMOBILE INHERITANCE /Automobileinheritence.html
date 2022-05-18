@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>AUTOMOBILE INHERITANCE MODEL</h1>
+</body>
+
+</html>
+<script>
+    let automobile = {
+        vehicals: {
+            car: {
+                wheels: 4,
+                type: {
+                    car1: "diesel",
+                    car2: "petrol",
+                    car3: "electric"
+                },
+                airbags: true,
+                seatbealt: true,
+                milage: {
+                    milage1: "low",
+                    milage2: "mediume",
+                    milage3: "good"
+                },
+                company: {
+                    company1: "honda",
+                    company2: "maruti",
+                    company3: "ford"
+                }
+            },
+            bike: {
+                wheels: 2,
+                type: {
+                    bike2: "electric",
+                    bike3: "petrol"
+                },
+                healmet: true,
+                speed: 60,
+                milage: {
+                    milage1: "low",
+                    milage2: "mediume",
+                    milage3: "good"
+                },
+                company: {
+                    company1: "honda",
+                    company2: "hero",
+                    company3: "tvs"
+                }
+            }
+        }
+    }
+    const new_bike = Object.create(automobile.vehicals.bike); // create new object 
+    new_bike.company.company4 = "yamah";
+    console.log(new_bike.company.company4)
+    console.log(new_bike.healmet);
+    console.log("new_bike", new_bike)
+    console.log("auto", automobile);
+
+</script>
